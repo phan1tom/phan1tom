@@ -38,6 +38,7 @@ int main()
         n *= 2;
         I2n = Integral(n);
         printf("| n = %ld | I = %lf | D = %lf |  \n\n", n, I2n, fabs(In - I2n) / 3);
-    } while ((fabs(In - I2n) / 3) >= e);
+    } 
+    while ((fabs(In - I2n) / 3) >= e);
     printf(" \n Ответ = %lf \n  In = %lf \n I2n = %lf \n", answer, In, I2n);
 }
