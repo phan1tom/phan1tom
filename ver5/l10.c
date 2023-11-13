@@ -31,7 +31,7 @@ int* transpose(int n, int m, int* a)
 
 int* multiply(int n, int m, int* a, int* b)
 {
-    int* p = safe_alloc(n * n * sizeof(int), "на матрицу-произведение");
+    int* p = safe_alloc(n * n * sizeof(int), "матрицу произведение");
 
     for (int i = 0; i < n; i++)
     {
@@ -83,8 +83,8 @@ int main()
     print_matrix(m, n, t);
 
     int* product = multiply(n, m, a, t);
-    printf("Произведение A×T:\n");
-    print_matrix(n, n, product);
+    printf("Произведение AxT:\n");
+    print_matrix(n, m, product);
 
     free(a);
     free(t);
