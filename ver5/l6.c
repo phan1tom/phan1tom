@@ -53,3 +53,46 @@ int print_array(int size, int a[])
         printf("\n");
     }
 }
+
+int main()
+{
+    srand(time(NULL));
+
+    int array_size;
+    printf("Введите размер массива: ");
+    scanf("%d", &array_size);
+    int a[array_size];
+    fill_random(array_size, a);
+
+    printf("Массив до:\n");
+    print_array(array_size, a);
+
+    int sum, product, begin_number, same_number = -1;
+    for (int i = 0; i < array_size; i++)
+    {
+        same_number = find_same_element(i, a, array_size);
+        if (same_number != -1)
+        {
+            sum = find_sum(i + 1, same_number - 1, a);
+            product = find_product(i + 1, same_number - 1, a);
+
+            a[i] = sum;
+            a[same_number] = product;
+            begin_number = i;
+            break;
+        }
+    }
+
+    printf("Массив после:\n");
+    print_array(array_size, a);
+
+    if (same_number != -1)
+    {
+        printf("Одинаковые элементы № %d и %d.\nСумма элементов между ними: %d, произведение: %d\n",
+            begin_number, same_number, sum, product);
+    }
+    else
+        printf("Одинаковые элементы не найдены.\n");
+
+    return 0;
+}
