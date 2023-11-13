@@ -4,11 +4,11 @@ int main()
 {
     float a, b, x;
 
-    printf("Enter a: ");
+    printf("Введите a: ");
     scanf("%f", &a);
-    printf("Enter b: ");
+    printf("Введите b: ");
     scanf("%f", &b);
-    printf("Enter x: ");
+    printf("Введите x: ");
     scanf("%f", &x);
 
     float sum = a + b;
@@ -32,6 +32,6 @@ int main()
     else
         result = b / x;
 
-    printf("Result: %.3f\n", result);
+    printf("Результат: %.3f\n", result);
     return 0;
 }
