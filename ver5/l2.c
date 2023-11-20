@@ -8,7 +8,7 @@ bool is_input_valid(double x);
 int main()
 {
     double x;
-    printf("Enter x: ");
+    printf("Enter x {0.14352 <= x <= 1.02834}: ");
     scanf("%lf", &x);
 
     if (is_input_valid(x))
@@ -16,11 +16,11 @@ int main()
         double y = sqrt(sin(2 * x)) + sqrt(sin(3 * x));
         double z = sqrt(sqrt( log(tan( y - (3.14 / 8) )) ));
 
-        printf("  y(x)  = %8lf\nz(y(x)) = %8lf\n", y, z);
+        printf("y(x)  = %8lf\nz(y) = %8lf\n", y, z);
     }
     else 
     {
-        printf("Введённый x вне области определения!\n");
+        printf("Введённый x вне области определения\n");
     }
 
     return 0;
